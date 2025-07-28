@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="left-side">
+            <div id="front-of-card">
+                <header>
+                    <div>
+                        <img src="card-logo.svg" alt="">
+                    </div>
+                </header>
+                <h2 id="card-number">0000 0000 0000 0000</h2>
+                <div id="card-data">
+                    <p id="card-name">JANE APPLESEED</p>
+                    <p id="card-exp">MM/AA</p>
+                </div>
+            </div>
+            <div id="back-of-card">
+                <p id="card-cvc">000</p>
+            </div>
+        </div>
+        <div id="right-side">
+            <section id="form-section">
+                <form id="card-form">
+                    <label class="form-label" for="input-card-name">CARDHOLDER NAME</label>
+                    <input type="text" placeholder="e.g. Jane Appleseed" id="input-card-name" required>
+                    <p id="verify-name" class="empty hidden">O campo está vazio.</p>
+                    
+                    <label class="form-label" for="input-card-number">CARD NUMBER</label>
+                    <input type="number" id="input-card-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" required>
+                    <p id="verify-number" class="empty hidden">O campo está vazio.</p>
+                    
+                    <div id="form-final-section">
+                        <div id="form-final-section-left-side">
+                            <label class="form-label" for="input-card-exp">EXP. DATE (MM/YY)</label>
+                            <span id="input-card-exp">
+                                <input type="number" inputmode="numeric" id="input-month" placeholder="MM" maxlength="2" max="12" required>
+                                <input type="number" inputmode="numeric" id="input-year" placeholder="YY" maxlength="2" max="99" required>
+                            </span>
+                            <p id="verify-date" class="empty hidden">Um campo está vazio.</p>
+                        </div>
+                        <div id="form-final-section-right-side">
+                            <label class="form-label" for="input-cvc">CVC</label>
+                            <input type="number" inputmode="numeric" name="" id="input-cvc" placeholder="000" max="999">
+                            <p id="verify-cvc" class="empty hidden">O campo está vazio.</p>
+                        </div>
+                    </div>
+                        
+                    <button id="form-btn">Confirm</button>
+            </form>
+            </section>
+            <section id="complete-section" class="hidden">
+                <img src="icon-complete.svg" alt="icon complete">
+                <h3>Thank You!</h3>
+                <p>We've added your card details</p>
+                <button id="continue-btn">Continue</button>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
